@@ -1,3 +1,3 @@
-![opera_KE8OO8On6X](https://github.com/AlexVeeBee/cleanfile/assets/75509525/c7705dcd-ed7c-477a-a07f-53117648aa9a)
+![opera_dle5sPIOGy](https://github.com/AlexVeeBee/cleanfile/assets/75509525/660ed71a-d20d-4376-b815-fce564c7122a)
 
 # cleanfile
