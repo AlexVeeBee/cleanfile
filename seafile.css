@@ -1,6 +1,6 @@
 :root {
     --blur: 10px;
-    --custom-homepage-bkg: url('https://wallpaperaccess.com/full/8748063.jpg');
+    --custom-homepage-bkg: url('https://w.wallhaven.cc/full/85/wallhaven-8586my.png');
     --custom-homepage-bkg-color: #555;
     --header-bkg-color: #111;
     --header-border-color: #333;
@@ -220,8 +220,20 @@ div.sf-md-viewer-topbar-first {
 }
 .side-panel-north, .main-panel-north {
     border-bottom: none !important;
+    background-color: transparent !important;
+    background: none !important;
+    /* backdrop-filter: blur(var(--blur)) !important; */
+}
+.side-panel-north::before, .main-panel-north::after {
     background-color: #22222263 !important;
-    backdrop-filter: blur(var(--blur)) !important;
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(var(--blur));
 }
 .main-panel-north {
     border-bottom: 1px solid var(--header-border-color) !important;
@@ -364,6 +376,15 @@ div.modal .modal-dialog .modal-content {
 
 /* mains */
 
+.main-panel .heading::after,
+.main-panel .cur-view-path.tab-nav-container::after {
+    content: none;
+}
+.main-panel .main-panel-center,
+.main-panel .content  {
+    background-color: #22222263;
+    backdrop-filter: blur(var(--blur));
+}
 .main-panel .heading {
     background-color: #2222228a;
     border: 1px solid #333;
@@ -373,8 +394,26 @@ div.modal .modal-dialog .modal-content {
     box-shadow: var(--shadow);
     margin: 4px;
 }
-.main-panel .heading::after {
-    content: none;
+.main-panel .cur-view-path.tab-nav-container {
+    background-color: #2222228a !important;
+    border: 1px solid #333;
+    backdrop-filter: blur(var(--blur));
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin: 4px;
+}
+.main-panel .cur-view-path.tab-nav-container .nav .nav-item .nav-link.active {
+    color: var(--brand-color) !important;
+    border-bottom: 2px solid var(--brand-color) !important;
+}
+.main-panel .statistic-traffic-tab {
+    background: linear-gradient(to top, #2222228a , transparent );
+    border-bottom: 1px solid #333;
+}
+.main-panel .statistic-traffic-tab .statistic-traffic-tab-item.active,
+.main-panel .statistic-traffic-tab .statistic-traffic-tab-item:hover {
+    color: var(--brand-color) !important;
+    border-bottom: 2px solid var(--brand-color) !important;
 }
 
 /* dirs */
@@ -580,7 +619,8 @@ div.modal .modal-dialog .modal-content {
     background-color: rgba(0, 0, 0, 0);
     border: none;
 }
-.shared-file-view-head {
+.shared-file-view-head,
+.op-bar {
     background-color: #22222263;
     border-radius: 8px;
     border: 1px solid #333;
@@ -620,6 +660,28 @@ div.modal .modal-dialog .modal-content {
     color: var(--brand-color);
 }
 
+/* upload */
+
+.uploader-list-view {
+    background-color: #222222;
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: var(--shadow);
+    margin: 10px;
+    overflow: hidden;
+}
+.uploader-list-header {
+    background-color: #333;
+    border-bottom: 1px solid #444;
+}
+.uploader-list-content {
+    background-color: #22222263;
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: var(--shadow);
+    margin: 10px;
+}
+
 @media (max-width: 767px) {
     .side-panel {
         background-color: #222;
@@ -639,10 +701,36 @@ div.modal .modal-dialog .modal-content {
     .side-panel > .side-panel-center {
         background-color: #22222263;
         backdrop-filter: blur(var(--blur));
+        border-top: 1px solid #333;
     }
     .side-panel > .side-panel-footer .side-nav-footer {
         background-color: #222222cd;
         backdrop-filter: blur(var(--blur));
         border-top: 1px solid #333;
     }
+}
+
+.css-q7hwna {
+    background-color: #2222228a;
+    border: 1px solid #333;
+    backdrop-filter: blur(var(--blur));
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 4px;
+}
+.css-qr46ko {
+    background-color: #2222228a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+.react-select-2-listbox {
+    background-color: #3c3c3c;
+    color: #fff;
+    border: 1px solid #444 !important;
+}
+.css-4l7m3m-option {
+    background-color: #3c3c3c;
+    color: #fff;
+    border: 1px solid #444 !important;
 }
