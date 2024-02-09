@@ -30,7 +30,7 @@ body, html {
 a, a:hover {
     color: var(--brand-color);
 }
-span, p {
+span, p, dd {
     color: #fff;
 }
 .account-popup a.item {
@@ -60,7 +60,8 @@ input:focus, textarea:focus, .form-control:focus {
     border: 1px solid #444 !important;
 }
 
-.text-secondary {
+.text-secondary,
+.old-history-main h2 {
     color: #fff !important;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -196,6 +197,9 @@ button.big-new-file-button:hover {
     color: #fff;
 }
 
+.action-icon:focus, .action-icon:hover {
+    color: var(--brand-color);
+}
 /* group */
 
 .btn-group button {
@@ -295,8 +299,7 @@ div.sf-md-viewer-topbar-first {
 .popover,
 .image-popover,
 .sf-context-menu.sf-dropdown-list {
-    overflow: hidden;
-    background-color: #222222ad;
+    background-color: #222222;
     border: 1px solid #333;
     border-radius: 8px;
     box-shadow: var(--shadow);
@@ -349,6 +352,24 @@ div.sf-md-viewer-topbar-first {
     border-left-color: var(--brand-color);
     background: linear-gradient(to right, var(--brand-color) 0px, #2222228a 50px); 
 }
+.notification-dialog-body table tbody tr:hover {
+    background-color: #333;
+    outline: 1px solid #444;
+    border-radius: 4px;
+}
+.notification-dialog-body table td {
+    border-bottom: none;
+    color: #fff;
+}
+.notification-header-close .item-dropdown-icon,
+.notification-header-close .notification-close-icon {
+    color: #fff;
+}
+.notification-header-close .item-dropdown-icon:hover,
+.notification-header-close .notification-close-icon:hover {
+    color: #fff;
+}
+
 
 /*  */
 
@@ -365,13 +386,25 @@ div.sf-md-viewer-topbar-first {
     display: flex;
     flex-direction: column;
 }
-.dropdown-menu button {
+/* .dropdown-menu button {
     background-color: #2222228a;
     border: 1px solid #333;
     border-radius: 4px;
     color: #fff;
 }
 .dropdown-menu button:hover {
+    background-color: #333;
+    outline: 1px solid #444;
+    border-radius: 4px;
+    color: #fff;
+} */
+.dropdown-menu .dropdown-item {
+    background-color: #2222228a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #fff;
+}
+.dropdown-menu .dropdown-item:hover {
     background-color: #333;
     outline: 1px solid #444;
     border-radius: 4px;
@@ -387,6 +420,15 @@ div.sf-md-viewer-topbar-first {
     box-shadow: var(--shadow);
 }
 /* MODAL */
+
+div.modal .modal-dialog .modal-header {
+    background-color: #2222228a;
+    border-bottom: 1px solid #444;
+}
+div.modal .modal-dialog .modal-footer {
+    background-color: #2222228a;
+    border-top: 1px solid #444;
+}
 div.modal .modal-dialog .modal-content {
     background-color: #2222228a;
     border: 1px solid #333;
@@ -449,18 +491,6 @@ div.modal .modal-dialog .modal-content {
     z-index: 2;
     position: relative;
 }
-/* .main-panel .main-panel-center::before,
-.main-panel .content::before  {
-    background-color: #22222263;
-    backdrop-filter: blur(var(--blur));
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-} */
 
 .main-panel .heading {
     background-color: #2222228a;
@@ -491,6 +521,56 @@ div.modal .modal-dialog .modal-content {
 .main-panel .statistic-traffic-tab .statistic-traffic-tab-item:hover {
     color: var(--brand-color) !important;
     border-bottom: 2px solid var(--brand-color) !important;
+}
+.old-history-main .commit-list {
+    position: relative;
+    z-index: 2;
+}
+.old-history-main .commit-list::before {
+    position: absolute;
+    z-index: -1;
+    top: -4px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 12px);
+    content: "";
+    background-color: #22222263;
+    border: 1px solid #333;
+    backdrop-filter: blur(var(--blur));
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+#main>.row>#main-panel,
+#main>.row>#main-panel>.text-panel,
+#main>.text-panel {
+
+    overflow: visible;
+    position: relative;
+    z-index: 2;
+}
+#main>.row>#main-panel>.text-panel>p,
+#main>.text-panel>p {
+    position: relative;
+    font-weight: bold;
+}
+#main>.row>#main-panel>.text-panel>p::before,
+#main>.text-panel>p::before {
+    background-color: #22222263;
+    backdrop-filter: blur(var(--blur));
+    box-shadow: var(--shadow);
+    /* warn iconm */
+    content: "";
+    font-size: 64px;
+    text-align: left;
+    position: absolute;
+    border: 1px solid #333;
+    border-radius: 8px;
+    top: -24px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% + 48px);
+    z-index: -1;
 }
 
 /* dirs */
@@ -596,18 +676,6 @@ table td {
     color: var(--brand-color);
 }
 
-/* cards */
-.empty-tip {
-    color: #fff;
-    background-color: #22222263;
-    border-radius: 8px;
-    border: 1px solid #333;
-    backdrop-filter: blur(var(--blur));
-    box-shadow: var(--shadow);
-}
-.empty-tip h2 {
-    color: #fff !important;
-}
 
 /* file view */
 .file-view-body {
@@ -829,6 +897,67 @@ table td {
     box-shadow: var(--shadow);
     margin: 10px;
 }
+
+/* random */
+
+.rc-calendar {
+    background-color: #222222;
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+.rc-calendar-disabled-cell .rc-calendar-date {
+    background-color: #333;
+}
+.rc-calendar-disabled-cell .rc-calendar-date:hover {
+    background-color: #343434;
+}
+.rc-calendar-date:hover {
+    background-color: #333;
+}
+.rc-calendar-today .rc-calendar-date {
+    border-color: var(--brand-color);
+}
+.rc-calendar-selected-date .rc-calendar-date {
+    background: var(--brand-color-dark) !important;
+}
+.rc-calendar-selected-date .rc-calendar-date:hover {
+    background: var(--brand-color-dark) !important;
+}
+.rc-calendar-ok-btn, .rc-calendar-time-picker-btn, .rc-calendar-today-btn {
+    color: var(--brand-color);
+}
+.rc-calendar-right-panel-body .rc-calendar-selected-time {
+    background-color: var(--brand-color-dark);
+    color: #fff;
+}
+.rc-calendar-right-panel-body ul li:hover {
+    color: var(--brand-color);
+    background-color: #333;
+    outline: 1px solid #444;
+    border-radius: 4px;
+}
+
+/* cards */
+.empty-tip {
+    color: #fff;
+    background-color: #22222263;
+    border-radius: 8px;
+    border: 1px solid #333;
+    backdrop-filter: blur(var(--blur));
+    box-shadow: var(--shadow);
+}
+.empty-tip h2 {
+    color: #fff !important;
+}
+.file-view-tip {
+    color: #fff;
+    background-color: #22222263;
+    border-radius: 8px;
+    border: 1px solid #333;
+    backdrop-filter: blur(var(--blur));
+    box-shadow: var(--shadow);
+}
 @media (max-width: 767px) {
     .side-panel {
         background-color: #222 !important;
@@ -857,20 +986,30 @@ table td {
         border-top: 1px solid #333;
     }
 }
-
+.css-15agui6, [data-css-15agui6] {
+    background-color: #2222228a !important;
+    border: 1px solid #333 !important;
+    box-shadow: var(--shadow) !important;
+    backdrop-filter: blur(var(--blur)) !important;
+}
+.css-1tlqf55, [data-css-1tlqf55] {
+    color: #fff !important;
+}
 .css-q7hwna {
     background-color: #2222228a;
     border: 1px solid #333;
     box-shadow: var(--shadow);
     padding: 4px;
 }
-.css-qr46ko {
-    background-color: #2222228a;
+.css-qr46ko,
+.css-96n4yy,
+.css-wjyke7 {
+    background-color: #222;
     border: 1px solid #333;
     box-shadow: var(--shadow);
 }
 .react-select-2-listbox {
-    background-color: #3c3c3c;
+    background-color: #222;
     color: #fff;
     border: 1px solid #444 !important;
 }
