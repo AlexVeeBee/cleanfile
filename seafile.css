@@ -27,7 +27,7 @@ body, html {
     background-blend-mode: multiply;
 }
 
-a, a:hover {
+a, a:hover ,a:focus {
     color: var(--brand-color);
 }
 span, p, dd {
@@ -290,6 +290,10 @@ div.sf-md-viewer-topbar-first {
 .nav-pills .nav-item .nav-link:hover {
     background-color: #333;
 }
+.nav:not(.nav-pills) .nav-item .nav-link.active {
+    color: var(--brand-color) !important;
+    border-bottom: 2px solid var(--brand-color) !important;
+}
 
 /* Panels */
 
@@ -399,18 +403,7 @@ div.sf-md-viewer-topbar-first {
     display: flex;
     flex-direction: column;
 }
-/* .dropdown-menu button {
-    background-color: #2222228a;
-    border: 1px solid #333;
-    border-radius: 4px;
-    color: #fff;
-}
-.dropdown-menu button:hover {
-    background-color: #333;
-    outline: 1px solid #444;
-    border-radius: 4px;
-    color: #fff;
-} */
+
 .dropdown-menu .dropdown-item {
     background-color: #2222228a;
     border: 1px solid #333;
@@ -947,22 +940,33 @@ table td {
 /* random */
 
 .rc-calendar {
-    background-color: #222222;
-    border: 1px solid #333;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
+    background-color: #222222 !important;
+    border: 1px solid #333 !important;
+    border-radius: 8px !important;
+    box-shadow: var(--shadow) !important;
 }
 .rc-calendar-disabled-cell .rc-calendar-date {
-    background-color: #333;
+    background-color: #333 !important;
+    color: #666 !important;
 }
 .rc-calendar-disabled-cell .rc-calendar-date:hover {
-    background-color: #343434;
+    background-color: #343434 !important;
+}
+.rc-calendar-date {
+    color:white !important;
+}
+.rc-calendar-selected-day .rc-calendar-date {
+    background-color: var(--brand-color-dark) !important;
+    color: #fff !important;
 }
 .rc-calendar-date:hover {
-    background-color: #333;
+    background-color: var(--brand-color-dark) !important;
+    color: #fff !important;
 }
 .rc-calendar-today .rc-calendar-date {
-    border-color: var(--brand-color);
+    border-color: var(--brand-color-dark) !important;
+    background-color: var(--brand-color) !important;
+    color: #fff !important;
 }
 .rc-calendar-selected-date .rc-calendar-date {
     background: var(--brand-color-dark) !important;
@@ -971,17 +975,30 @@ table td {
     background: var(--brand-color-dark) !important;
 }
 .rc-calendar-ok-btn, .rc-calendar-time-picker-btn, .rc-calendar-today-btn {
-    color: var(--brand-color);
+    color: var(--brand-color) !important;
 }
 .rc-calendar-right-panel-body .rc-calendar-selected-time {
-    background-color: var(--brand-color-dark);
-    color: #fff;
+    background-color: var(--brand-color-dark) !important;
+    color: #fff !important;
 }
 .rc-calendar-right-panel-body ul li:hover {
-    color: var(--brand-color);
+    color: var(--brand-color) !important;
     background-color: #333;
     outline: 1px solid #444;
     border-radius: 4px;
+}
+
+/* admin */
+
+.sys-stat-tool > div:hover {
+    background-color: var(--brand-color-dark);
+    border-color: var(--brand-color);
+    color: #fff;
+}
+.sys-stat-tool div.item-active {
+    background-color: var(--brand-color-dark);
+    border-color: var(--brand-color);
+    color: #fff;
 }
 
 /* cards */
@@ -1072,10 +1089,53 @@ table td {
 .css-1j5ra8z-option {
     background-color: var(--brand-color-dark) !important;
     color: #fff;
+}
+/* selected */
+.css-1rug6pa-option {
+    background-color: var(--brand-color-dark) !important;
+    color: #fff;
     border: 1px solid var(--brand-color) !important;
 }
+/*  */
 .system-admin-info {
     z-index: 2;
+}
+
+/* >dropbown */
+.css-19bb58m,
+#react-select-2-input,
+#react-select-2-input.true__input,
+.css-1jqq78o-placeholder {
+    color: #fff !important;
+}
+/* user select */
+.css-197s8nj-option {
+    background-color: #222 !important;
+}
+
+.css-1yl8597-control,
+.css-1p3m7a8-multiValue {
+    background-color: #222 !important;
+    border-color: #444 !important;
+    color: #fff !important;
+    box-shadow: var(--shadow);
+}
+.css-1yl8597-control:hover {
+    background-color: #333 !important;
+}
+.css-1dimb5e-singleValue {
+    color: #fff !important;
+}
+
+.css-18i9lch-control {
+    background-color: #222 !important;
+    color: #fff !important;
+    box-shadow: var(--shadow) !important;
+    border-color: var(--brand-color) !important;
+}
+
+.css-18i9lch-control:hover {
+    background-color: #333 !important;
 }
 
 /* help desk */
