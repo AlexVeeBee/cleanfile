@@ -571,7 +571,6 @@ div.modal .modal-dialog .modal-content {
     background-color: #22222263;
     backdrop-filter: blur(var(--blur));
     box-shadow: var(--shadow);
-    /* warn iconm */
     content: "";
     font-size: 64px;
     text-align: left;
