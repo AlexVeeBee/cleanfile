@@ -30,6 +30,9 @@ body, html {
 a, a:hover ,a:focus {
     color: var(--brand-color);
 }
+.attr-action-icon:hover {
+    color: var(--brand-color) !important;
+}
 span, p, dd {
     color: #fff;
 }
@@ -620,6 +623,7 @@ div.modal .modal-dialog .modal-content {
     content: "";
     background-color: #22222263;
     backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
     border: 1px solid #333;
     box-shadow: var(--shadow);
     position: absolute;
@@ -629,6 +633,11 @@ div.modal .modal-dialog .modal-content {
     height: calc(100% + 12px);
     border-radius: 8px;
     z-index: -1;
+}
+.shared-dir-view-main .table-hover thead ,
+.shared-dir-view-main .table-hover tbody {
+    position: relative;
+    z-index: 10;
 }
 
 /* table */
@@ -986,6 +995,17 @@ table td {
     background-color: #333;
     outline: 1px solid #444;
     border-radius: 4px;
+}
+
+.rc-calendar-date-panel-container,
+.rc-calendar-year-panel-body,
+.rc-calendar-decade-panel {
+    background-color: #222222 !important;
+}
+.rc-calendar-year-panel-selected-cell .rc-calendar-year-panel-year,
+.rc-calendar-year-panel-selected-cell .rc-calendar-year-panel-year:hover {
+    background-color: var(--brand-color-dark) !important;
+    color: #fff !important;
 }
 
 /* admin */
