@@ -452,6 +452,9 @@ div.sf-md-viewer-topbar-first {
     border-radius: 8px;
     box-shadow: var(--shadow);
 }
+.login-panel .submit:focus {
+    border-color: var(--brand-color);
+}
 /* MODAL */
 
 div.modal .modal-dialog .modal-header {
@@ -1046,6 +1049,25 @@ table td {
     color: #fff !important;
 }
 
+/* PDF */
+#sidebarContainer {
+    background-color: #222;
+    border-right: 1px solid #333;
+    box-shadow: var(--shadow);
+}
+#sidebarContainer>#toolbarSidebar {
+    background-color: #444;
+    border-bottom: 1px solid #333;
+    box-shadow: var(--shadow);
+}
+#thumbnailView .thumbnail.selected {
+    background-color: var(--brand-color-dark);
+    border: 1px solid var(--brand-color);
+}
+#thumbnailView .thumbnail.selected .thumbnailImage {
+    border-color: var(--brand-color);
+}
+
 /* admin */
 
 .sys-stat-tool > div:hover {
@@ -1115,6 +1137,7 @@ table td {
         box-shadow: var(--shadow);
     }
 }
+.css-1iiznvc, [data-css-1iiznvc],
 .css-6lwhe4, [data-css-6lwhe4],
 .css-16hxgpx, [data-css-16hxgpx],
 .css-15agui6, [data-css-15agui6] {
