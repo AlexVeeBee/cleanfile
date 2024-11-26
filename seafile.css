@@ -624,9 +624,6 @@ div.modal .modal-dialog .modal-content {
     z-index: 2;
     background-color: transparent;
 }
-.dir-content-nav .tree-node-hight-light {
-    background-color: var(--brand-color) !important;
-}
 .dir-content-nav .tree-view {
     color: #fff;
 }
@@ -703,7 +700,10 @@ table td {
     box-shadow: var(--shadow);
 }
 .tr-active {
-    background-color: #555 !important;
+    border-radius: 8px;
+    background-color: #22222263 !important;
+    outline: 1px solid var(--brand-color);
+    outline-offset: -1px;
 }
 
 /* grid */
@@ -1097,6 +1097,12 @@ table td {
     backdrop-filter: blur(var(--blur));
     box-shadow: var(--shadow);
 }
+.empty-tip .empty-tip-title {
+    color: #fff;
+}
+.empty-tip .empty-tip-text {
+    color: #fff;
+}
 .empty-tip h2 {
     color: #fff !important;
 }
@@ -1276,6 +1282,22 @@ table td {
 
 
 /* v 12.0 */
+.tree-section .tree-section-header .sf3-font-down,
+.tree-section .tree-section-header .sf3-font-down 
+.cur-view-path .cur-view-path-btn .sf3-font, 
+.cur-view-path .cur-view-path-btn.sf3-font,
+.sf3-font,
+.sr-only {
+    color: #fff;
+}
+
+.sf3-font {
+    color: #fff !important;
+}
+
+.sf-heading {
+    color: #fff;
+}
 
 .side-panel {
     background-color: transparent !important;
@@ -1284,10 +1306,18 @@ table td {
 @media (max-width: 767px) {
     .side-panel {
         background-color: #222 !important;
-        border: 1px solid #333 !important;
-        border-radius: 8px !important;
+        border: none !important;
+        border-right: 1px solid #333 !important;
+        border-radius: 0px !important;
         box-shadow: var(--shadow) !important;
     } 
+}
+.cur-activity-modifiers:hover {
+    background-color: #2222228a;
+    border-radius: 8px;
+    outline: 1px solid #333;
+    outline-offset: -1px;
+    box-shadow: var(--shadow);
 }
 .side-nav-bottom-toolbar:hover {
     background-color: #2222228a;
@@ -1303,11 +1333,17 @@ table td {
 }
 /* .side-panel .side-nav .side-nav-con .nav-item.active::before */
 .transfer-dialog-side .nav-item .nav-link.active {
+    color: white !important;
     background-color: #2222228a !important;
     border-radius: 8px !important;
     border: 1px solid #333 !important;
     box-shadow: var(--shadow) !important;
 }
+.nav-link.active {
+    color: white !important;
+}
+
+.tree-node-hight-light::before,
 .nav-link.active::before,
 .nav-item.active::before {
     background-color: var(--brand-color) !important;
@@ -1329,6 +1365,7 @@ table td {
 .side-panel .side-nav .side-nav-con .nav-item {
     background-color: transparent;
 }
+.lib-setting-nav .nav-pills .nav-item .nav-link.active,
 .side-panel .nav-pills .nav-item .nav-link:hover,
 .side-panel .nav-pills .nav-item .nav-link.active {
     background-color: #2222228a;
@@ -1360,4 +1397,76 @@ table td {
 
 .cur-view-content.lib-content-container {
     background-color: transparent;
+}
+
+.side-panel .nav-pills .nav-item .nav-link:hover, 
+.side-panel .nav-pills .nav-item .nav-link.active {
+    color: white;
+}
+
+.side-nav-folded #files-sub-nav {
+    background-color: #2222228a;
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(var(--blur));
+}
+.tree-section .tree-section-header .tree-section-header-title {
+    color: #fff;
+}
+
+.cur-view-path .cur-view-path-btn:hover,
+.tree-section .tree-section-body .right-icon:hover,
+.dir-view-path .path-item:hover {
+    background-color: #2222228a;
+}
+
+.dir-content-nav .tree-node-hight-light {
+    /* background-color: var(--brand-color) !important; */
+    background-color: #2222228a !important;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+.tree-section .tree-section-header .tree-section-header-operation:hover,
+.dir-others .dir-others-item:hover,
+.tree-section .tree-section-header.tree-section-header-hover, 
+.tree-section .tree-section-header:not(.tree-section-header-hover):hover {
+    background-color: #2222228a;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+.activity-modifier-selector-container {
+    background-color: #222222;
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: var(--shadow);
+}
+.activity-selected-modifiers {
+    background-color: transparent !important;
+    border-bottom: 1px solid #333 !important;
+}
+
+.activity-user-item:hover {
+    background-color: #222222;
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: var(--shadow);
+}
+
+.activity-selected-modifier {
+    background-color: #2222228a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 4px;
+    padding-right: 8px;
+}
+
+/* wiki */
+
+.wiki2-side-panel {
+    background-color: #2222228a;
+    border-right: 1px solid #333;
+    box-shadow: var(--shadow);
 }
